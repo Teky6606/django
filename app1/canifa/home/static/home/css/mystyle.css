@@ -1,0 +1,24 @@
+.cardbg{
+    background-color: rgb(247, 242, 242);
+}
+
+.heading{
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform .2s;
+}
+.card{
+    margin: 0 10px;
+    margin-top: 20px;
+}
+.card:hover{
+    transform: scale(1.009);
+}
+
+.icon>i{
+    color: rgb(255, 204, 0);
+}
+
+.mgt{
+    margin: 0 10px;
+}
