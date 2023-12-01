@@ -13,7 +13,7 @@ class RegistrationForm(forms.Form):
           password2 = self.cleaned_data['password2']
         if password1 == password2 and password1:
          return password2
-        raise forms.ValidationError("Mật khẩu không hợp lệ")
+        raise forms.ValidationError("Mật khẩu nhập lại không hợp lệ")
     
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -25,7 +25,7 @@ class RegistrationForm(forms.Form):
          User.objects.get(username=username)
         except User.DoesNotExist:
             return username
-        raise forms.ValidationError("Tài khoản đã tồn tại")
+        raise forms.ValidationError("Tài khoản đã tồn tại, vui lòng chọn tên đăng nhập khác")
     
     def save(self):
         User.objects.create_user(username=self.cleaned_data['username'], email=self.cleaned_data['email'],

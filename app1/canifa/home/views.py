@@ -1,6 +1,7 @@
 from .forms import RegistrationForm
 from django.http import HttpResponseRedirect 
 from django.shortcuts import render
+from .models import *
 def regisiter(request):
     form = RegistrationForm()
     if request.method == 'POST':
@@ -16,5 +17,7 @@ def getAbout(request):
     return render(request,'home/about.html',context)
 
 def getHome(request):
+    
     context ={ }
     return render(request,'home/home1.html',context)
+

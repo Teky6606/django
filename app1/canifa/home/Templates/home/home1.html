@@ -1,6 +1,5 @@
 {%  extends 'home/base.html' %}
 {%load static%}
-
 {%block main-content%}
 <!-- <div class="container">
   <div class="card-group ">
@@ -61,6 +60,21 @@
 </div>
 <!-- SẢN PHẨM -->
 
+<section class="container mt-3">
+  <h5 class=" text-uppercase fw-bold">gợi ý cho bạn1</p>
+</section>
+<div class="container">
+  <div class="card-group">
+    <div class="card" style="width: 18rem;">
+      <img src="{%static 'home/images/cow-milk.png'%}" class="card-img-top" alt="...">
+      <div class="card-body text-center">
+        <p class="card-text fw-bold">Tên Sản phẩm</p>
+        <del>500.000 VNĐ</del> <span></span> <br>
+        <a href="" class="btn btn-danger">Mua ngay</a> 
+        <a href="#" class="">Xem chi tiết</a>
+      </div>
+    </div>
   </div>
 </div>
+
 {% endblock main-content%}
