@@ -1,3 +1,4 @@
+# code mấu để tạo forrm đăng kí tài khoản admin / phân quyền chức nang
 from django import forms
 import re
 from django.contrib.auth.models import User
@@ -13,6 +14,7 @@ class RegistrationForm(forms.Form):
         if password1 == password2 and password1:
          return password2
         raise forms.ValidationError("Mật khẩu không hợp lệ")
+    
     def clean_username(self):
         username = self.cleaned_data['username']
         if not re.search(r'^\w+$', username):
@@ -22,6 +24,7 @@ class RegistrationForm(forms.Form):
         except User.DoesNotExist:
             return username
         raise forms.ValidationError("Tài khoản đã tồn tại")
+    
     def save(self):
         User.objects.create_user(username=self.cleaned_data['username'], email=self.cleaned_data['email'],
         password=self.cleaned_data['password1'])
