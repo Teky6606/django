@@ -7,12 +7,15 @@
  <title>Document</title>
 </head>
 <body>
-    <center>
-            <form action="." method="POST">
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Đăng ký"/>
-            </form>
-    </center>
+ <center>
+    <h1>ĐĂNG KÍ TÀI KHOẢN USER</h1>
+        <form action="." method="POST" id="registrationForm">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Đăng ký"/>
+        </form>
+</center>
+
+
 </body>
 </html>

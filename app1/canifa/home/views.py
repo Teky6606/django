@@ -8,4 +8,13 @@ def regisiter(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')
-    return render(request, 'home/home.html', {'form': form})
+    return render(request, 'home/form_dangki.html', {'form': form})
+
+
+def getAbout(request):
+    context ={ }
+    return render(request,'home/about.html',context)
+
+def getHome(request):
+    context ={ }
+    return render(request,'home/home1.html',context)

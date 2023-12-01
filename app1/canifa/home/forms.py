@@ -19,6 +19,8 @@ class RegistrationForm(forms.Form):
         username = self.cleaned_data['username']
         if not re.search(r'^\w+$', username):
           raise forms.ValidationError("Tên tài khoản có kí tự đặc biệt")
+        if len(username)>10:
+           raise forms.ValidationError("Tài khoản giới hạn 10 kí tự")
         try:
          User.objects.get(username=username)
         except User.DoesNotExist:
