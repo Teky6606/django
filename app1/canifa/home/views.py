@@ -17,7 +17,13 @@ def getAbout(request):
     return render(request,'home/about.html',context)
 
 def getHome(request):
-    
-    context ={ }
+    products = product.objects.all()[:4]
+    context ={'products':products}
+    rows_of_products = []
+    current_row = []
     return render(request,'home/home1.html',context)
+
+def cart(request):
+    context ={ }
+    return render(request,'home/cart.html',context)
 
